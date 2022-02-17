@@ -85,20 +85,21 @@ class StopWatch {
 //            ).toString().padStart(2, "0")
         
         const seconds = (
-                diff ? Math.floor(diff.getSeconds()) : 0
+                diff ? Math.floor(diff.getUTCSeconds()) : 0
             ).toString().padStart(2, "0")
         const minutes = (
-                diff ? Math.floor(diff.getMinutes()) : 0
+                diff ? Math.floor(diff.getUTCMinutes()) : 0
             ).toString().padStart(2, "0")
         
         const hours = (
-                diff ? Math.floor(diff.getMilliseconds() / 36e5) : 0
+                diff ? Math.floor(diff.getUTCHours()) : 0
             ).toString().padStart(2, "0")
         
         document.getElementById("hours").textContent = hours
         document.getElementById("minutes").textContent = minutes
         document.getElementById("seconds").textContent = seconds
 //        document.getElementById("hundredths").textContent = hundredths
+        console.log(hours)
     }
 
 }
